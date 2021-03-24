@@ -29,6 +29,8 @@ namespace Clicker
             Img_M36.Visibility = Visibility.Hidden;
             Img_van228.Visibility = Visibility.Hidden;
         }
+        int[] costs = new int[3] { 34000, 3250000, 456000 };
+        int[] films = new int[3] { 200000, 210000, 225000 };
         long points = 1000000000;
         static int clickCount = 1;
         static int click = 1 * clickCount;
@@ -55,12 +57,12 @@ namespace Clicker
             clk.Content = "Click count: " + clickCount;
             click = click / 2 * clickCount;
         }
-        public void UpdateCSSim()
+        /*public void UpdateCSSim()
         {
             qAmounts.Content = "Qiqis: " + qiqis;
             spAmounts.Content = "Jacksons: " + tanks;
             vanAmounts.Content = "Drugs: " + dMasters;
-        }
+        }*/
 
         private void Butt_lv1_Click(object sender, RoutedEventArgs e)
         {
@@ -153,7 +155,7 @@ namespace Clicker
             Update();
         }
 
-        private void Car_bt_Click(object sender, RoutedEventArgs e)
+        /*private void Car_bt_Click(object sender, RoutedEventArgs e)
         {
             if (points >= 34000)
             {
@@ -218,11 +220,87 @@ namespace Clicker
                 Gachi_vol56_bt.Visibility = Visibility.Hidden;
                 Update();
             }
+        }*/
+
+        private void Cb_Cars_Selected(object sender, SelectionChangedEventArgs e)
+        {
+            string c1 = "Qiqic";
+            string c2 = "GTR";
+            string c3 = "1128A";
+            ComboBox comboBox = (ComboBox)sender;
+            ComboBoxItem selectedItem = (ComboBoxItem)comboBox.SelectedItem;
+            string item = selectedItem.Content.ToString();
+            SpendBox.AppendText(item + Environment.NewLine);
+            if (item.Contains(c1))
+            {
+                if (points >= (costs[0]))
+                {
+                    points -= costs[0];
+                    Img_tall_qiqi.Visibility = Visibility.Visible;
+                    qiqis += 1;
+                    //Update();
+                    //UpdateCSSim();
+                }
+            }
+            else if (item.Contains(c2))
+            {
+                if (points >= (costs[1]))
+                {
+                    points -= costs[1];
+                    tanks += 1;
+                    //Update();
+                    //UpdateCSSim();
+                    Img_M36.Visibility = Visibility.Visible;
+                }
+            }
+            else if (item.Contains(c3))
+            {
+                if (points >= (costs[2]))
+                {
+                    points -= costs[2];
+                    dMasters += 1;
+                    //Update();
+                    //UpdateCSSim();
+                    Img_van228.Visibility = Visibility.Visible;
+                }
+            }
+            Update();
         }
 
-        private void Cb_Cars_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Cb_Films_Selected(object sender, SelectionChangedEventArgs e)
         {
-
+            string c1 = "1-2";
+            string c2 = "3-4";
+            string c3 = "5-6";
+            ComboBox comboBox = (ComboBox)sender;
+            ComboBoxItem selectedItem = (ComboBoxItem)comboBox.SelectedItem;
+            string item = selectedItem.Content.ToString();
+            SpendBox.AppendText(item + Environment.NewLine);
+            if (item.Contains(c1))
+            {
+                if (points >= (films[0]))
+                {
+                    points -= films[0];
+                    MessageBox.Show("Фильмы GM 1 и 2 куплены.");
+                }
+            }
+            else if (item.Contains(c2))
+            {
+                if (points >= (films[1]))
+                {
+                    points -= films[1];
+                    MessageBox.Show("Фильмы GM 3 и 4 куплены.");
+                }
+            }
+            else if (item.Contains(c3))
+            {
+                if (points >= (films[2]))
+                {
+                    points -= films[2];
+                    MessageBox.Show("Фильмы GM 5 и 6 куплены.");
+                }
+            }
+            Update();
         }
     }
 }

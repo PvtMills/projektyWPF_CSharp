@@ -32,22 +32,23 @@
             <TabItem Header="Магазын" Margin="13,0,-55,-2">
                 <Grid Background="#FFE5E5E5">
                     <Image Margin="0,0,-2,-3" Source="Image4.png" Stretch="Fill"/>
-                    <Label x:Name="cssim" Content="Cash spending simulator 2021: " HorizontalAlignment="Left" Margin="40,80,0,0" VerticalAlignment="Top" Foreground="#FFFF9700" Height="40" FontSize="20"/>
+                    <Label x:Name="cssim" Content="Cash spending simulator 2021: " HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Foreground="#FFFF9700" Height="40" FontSize="20"/>
                     <Label x:Name="curPts" Content="Current points: " HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Foreground="#FFFF9700" Height="40" FontSize="20"/>
-                    <Label x:Name="amounts" Content="You obtained " HorizontalAlignment="Left" Margin="480,40,0,0" VerticalAlignment="Top" Foreground="#FFFF9700" Height="40" FontSize="20"/>
-                    <Label x:Name="qAmounts" Content="Qiqis: 0" HorizontalAlignment="Left" Margin="480,80,0,0" VerticalAlignment="Top" Foreground="#FFFF9700" Height="40" FontSize="20"/>
-                    <Label x:Name="spAmounts" Content="Jacksons: 0" HorizontalAlignment="Left" Margin="480,120,0,0" VerticalAlignment="Top" Foreground="#FFFF9700" Height="40" FontSize="20"/>
-                    <Label x:Name="vanAmounts" Content="Drugs: 0" HorizontalAlignment="Left" Margin="480,160,0,0" VerticalAlignment="Top" Foreground="#FFFF9700" Height="40" FontSize="20"/>
-                    <Button x:Name="Car_bt" Content="Honda Qiqic" HorizontalAlignment="Left" Margin="40,120,0,0" VerticalAlignment="Top" FontSize="20" Click="Car_bt_Click"/>
-                    <Button x:Name="SpCar_bt" Content="M36 GTR" HorizontalAlignment="Left" Margin="40,160,0,0" VerticalAlignment="Top" FontSize="20" Click="SpCar_bt_Click"/>
-                    <Button x:Name="Van_bt" Content="UAZ 228" HorizontalAlignment="Left" Margin="40,200,0,0" VerticalAlignment="Top" FontSize="20" Click="Van_bt_Click"/>
-                    <Button x:Name="Gachi_vol12_bt" Content="GM 1-2" HorizontalAlignment="Left" Margin="40,240,0,0" VerticalAlignment="Top" FontSize="20" Click="Gachi_vol12_bt_Click"/>
-                    <Button x:Name="Gachi_vol34_bt" Content="GM 3-4" HorizontalAlignment="Left" Margin="40,280,0,0" VerticalAlignment="Top" FontSize="20" Click="Gachi_vol34_bt_Click"/>
-                    <Button x:Name="Gachi_vol56_bt" Content="GM 5-6" HorizontalAlignment="Left" Margin="40,320,0,0" VerticalAlignment="Top" FontSize="20" Click="Gachi_vol56_bt_Click"/>
-                    <Image x:Name="Img_tall_qiqi" Margin="735,265,0,-3" Source="shakal.png" Stretch="Fill"/>
-                    <Image x:Name="Img_van228" Margin="260,265,279,-3" Source="aaaaaaaa.png" Stretch="Fill"/>
-                    <Image x:Name="Img_M36" Margin="515,265,59,0" Source="m36gtr.png" Stretch="Fill"/>
-                    <ComboBox x:Name="Cb_Cars" HorizontalAlignment="Left" Margin="628,80,0,0" VerticalAlignment="Top" SelectionChanged="Cb_Cars_SelectionChanged"/>
+                    <Label x:Name="amounts" Content="You obtained:" HorizontalAlignment="Left" Margin="412,10,0,0" VerticalAlignment="Top" Foreground="#FFFF9700" Height="40" FontSize="20"/>
+                    <Image x:Name="Img_tall_qiqi" Margin="475,262,260,0" Source="shakal.png" Stretch="Fill"/>
+                    <Image x:Name="Img_van228" Margin="0,265,539,-3" Source="aaaaaaaa.png" Stretch="Fill"/>
+                    <Image x:Name="Img_M36" Margin="255,265,319,0" Source="m36gtr.png" Stretch="Fill"/>
+                    <ComboBox x:Name="Cb_Cars" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" SelectionChanged="Cb_Cars_Selected" Width="120">
+                        <ComboBoxItem Content="Honda Qiqic"></ComboBoxItem>
+                        <ComboBoxItem Content="M36 GTR"></ComboBoxItem>
+                        <ComboBoxItem Content="UAZ M1128A"></ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox x:Name="Cb_Films" HorizontalAlignment="Left" Margin="176,85,0,0" VerticalAlignment="Top" SelectionChanged="Cb_Films_Selected" RenderTransformOrigin="-0.138,0.675" Width="120">
+                        <ComboBoxItem Content="GM 1-2"></ComboBoxItem>
+                        <ComboBoxItem Content="GM 3-4"></ComboBoxItem>
+                        <ComboBoxItem Content="GM 5-6"></ComboBoxItem>
+                    </ComboBox>
+                    <TextBox x:Name="SpendBox" HorizontalAlignment="Left" Height="231" Margin="549,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="235"/>
                 </Grid>
             </TabItem>
 
