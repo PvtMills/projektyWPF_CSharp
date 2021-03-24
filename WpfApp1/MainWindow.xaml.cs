@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace Calculator
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -23,6 +23,145 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void buttPlus_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                lbRes.Content = double.Parse(numTb1.Text) + double.Parse(numTb2.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Пожалуйста, вводите цифры!");
+            }
+        }
+
+        private void buttKlee_Click(object sender, RoutedEventArgs e)
+        {
+            numTb1.Clear();
+            numTb2.Clear();
+            lbRes.Content = "0";
+        }
+
+        private void buttMinus_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                lbRes.Content = double.Parse(numTb1.Text) - double.Parse(numTb2.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Пожалуйста, вводите цифры!");
+            }
+        }
+
+        private void buttX_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                lbRes.Content = double.Parse(numTb1.Text) * double.Parse(numTb2.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Пожалуйста, вводите цифры!");
+            }
+        }
+
+        private void buttDiv_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                lbRes.Content = double.Parse(numTb1.Text) / double.Parse(numTb2.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Пожалуйста, вводите цифры!");
+            }
+        }
+
+        private void buttPer_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                lbRes.Content = double.Parse(numTb1.Text) / 100;
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Пожалуйста, вводите цифры!");
+            }
+        }
+
+        private void buttSin_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                lbRes.Content = Math.Sin(double.Parse(numTb1.Text));
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Пожалуйста, вводите цифры!");
+            }
+        }
+
+        private void buttCos_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                lbRes.Content = Math.Cos(double.Parse(numTb1.Text));
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Пожалуйста, вводите цифры!");
+            }
+        }
+
+        private void buttLoh_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                lbRes.Content = Math.Log(double.Parse(numTb1.Text), double.Parse(numTb2.Text));
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Пожалуйста, вводите цифры!");
+            }
+        }
+
+        private void buttPow_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                lbRes.Content = Math.Pow(double.Parse(numTb1.Text), 2);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Пожалуйста, вводите цифры!");
+            }
+        }
+
+        private void buttPowN_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                lbRes.Content = Math.Pow(double.Parse(numTb1.Text), double.Parse(numTb2.Text));
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Пожалуйста, вводите цифры!");
+            }
+        }
+
+        private void buttSqrt_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                lbRes.Content = Math.Sqrt(double.Parse(numTb1.Text));
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Пожалуйста, вводите цифры!");
+            }
         }
     }
 }
